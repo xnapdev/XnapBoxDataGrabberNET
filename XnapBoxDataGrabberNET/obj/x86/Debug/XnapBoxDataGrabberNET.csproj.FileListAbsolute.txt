@@ -1,0 +1,5 @@
+D:\Github\XnapBoxDataGrabberNET\XnapBoxDataGrabberNET\bin\Debug\XnapBoxDataGrabberNET.exe
+D:\Github\XnapBoxDataGrabberNET\XnapBoxDataGrabberNET\bin\Debug\XnapBoxDataGrabberNET.pdb
+D:\Github\XnapBoxDataGrabberNET\XnapBoxDataGrabberNET\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Github\XnapBoxDataGrabberNET\XnapBoxDataGrabberNET\obj\x86\Debug\XnapBoxDataGrabberNET.exe
+D:\Github\XnapBoxDataGrabberNET\XnapBoxDataGrabberNET\obj\x86\Debug\XnapBoxDataGrabberNET.pdb
