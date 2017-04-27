@@ -38,3 +38,10 @@ X-ObjectColor1HSV: #999#999#999
 X-ObjectColor2HSV: #999#999#999
 (2nd Dominant Color, H, integer: 0-360, S, integer: 0-100%, V, integer: 0-100%)
 ```
+
+License
+-------
+
+This software is licensed under [GNU General Public License][GNU GPL] and distributed AS IS, without warranties of any kind.
+
+[GNU GPL]: http://opensource.org/licenses/gpl-3.0.html "GNU General Public License text"
