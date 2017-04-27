@@ -8,7 +8,7 @@ This is a C# example of grabbing data from XnapBox. You can collect the face ima
 You need Visual Studio 2010. .NET framework 4.0 to compile the source code.
 
 ## XnapBox HTTP Headers (>= r.0.9.8)
----
+```
 X-Timestamp:YYYYMMDDTHHMMSS-SSSSSSSSSSS.MMMMMM-FFFFFFFF
 YYYYMMDD=Year,Month,Day (system wide, will be all 0 without NTP/ONVIF time sync)
 HHMMSS=Hour,Minutes,Seconds (system wide, will be all 0 without NTP/ONVIF time sync)
@@ -37,4 +37,4 @@ X-ObjectColor1HSV: #999#999#999
 (Dominant Color, H, integer: 0-360, S, integer: 0-100%, V, integer: 0-100%)
 X-ObjectColor2HSV: #999#999#999
 (2nd Dominant Color, H, integer: 0-360, S, integer: 0-100%, V, integer: 0-100%)
----
+```
