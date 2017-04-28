@@ -378,6 +378,7 @@ namespace XnapBox
             String objectColor2HSV = safeGetString(frameHeader, "X-ObjectColor2HSV", "");
             Color color1 = parseHSVString(objectColor1HSV);
             Color color2 = parseHSVString(objectColor2HSV);
+            int blurIndex = safeGetInt(frameHeader, "X-BLURINDEX", -1);
 
             Boolean isFullFrame = false;
             Boolean isHeartbeat = false;
@@ -421,7 +422,7 @@ namespace XnapBox
                 {
                     try
                     {
-                        FrameReady(this, new FrameReadyEventArgs { timestamp = timestamp, time = time, frameID = frameID, filename = filename, FrameBuffer = CurrentFrame, Bitmap = Bitmap, centerX = centerX, centerY = centerY, objectHeight = objectHeight, objectWidth = objectWidth, trackerID = trackerID, color1 = color1, color2 = color2 });
+                        FrameReady(this, new FrameReadyEventArgs { timestamp = timestamp, time = time, frameID = frameID, filename = filename, FrameBuffer = CurrentFrame, Bitmap = Bitmap, centerX = centerX, centerY = centerY, objectHeight = objectHeight, objectWidth = objectWidth, trackerID = trackerID, color1 = color1, color2 = color2, blurIndex = blurIndex });
                     }
                     catch (Exception )
                     {
@@ -496,6 +497,7 @@ namespace XnapBox
         public String trackerID;
         public Color color1;
         public Color color2;
+        public int blurIndex;
 
         public String toString()
         {
