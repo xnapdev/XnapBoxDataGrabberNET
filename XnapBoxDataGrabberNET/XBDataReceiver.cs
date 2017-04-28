@@ -378,7 +378,7 @@ namespace XnapBox
             String objectColor2HSV = safeGetString(frameHeader, "X-ObjectColor2HSV", "");
             Color color1 = parseHSVString(objectColor1HSV);
             Color color2 = parseHSVString(objectColor2HSV);
-            int blurIndex = safeGetInt(frameHeader, "X-BLURINDEX", -1);
+            int blurIndex = safeGetInt(frameHeader, "X-BlurIndex", -1);
 
             Boolean isFullFrame = false;
             Boolean isHeartbeat = false;

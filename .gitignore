@@ -10,3 +10,13 @@ XnapBoxDataGrabberNET/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cac
 XnapBoxDataGrabberNET.suo
 
 *.suo
+
+XnapBoxDataGrabberNET/bin/Debug/XnapBoxDataGrabberNET.exe
+
+*.pdb
+
+*.cache
+
+XnapBoxDataGrabberNET/obj/x86/Debug/XnapBoxDataGrabberNET.csproj.FileListAbsolute.txt
+
+XnapBoxDataGrabberNET/obj/x86/Debug/XnapBoxDataGrabberNET.exe

@@ -38,7 +38,7 @@ X-ObjectColor1HSV: #999#999#999
 X-ObjectColor2HSV: #999#999#999
 (2nd Dominant Color, H, integer: 0-360, S, integer: 0-100%, V, integer: 0-100%)
 
-X-BLURINDEX: 99999
+X-BlurIndex: 99999
 (Blur index indicate the blur level: 0-10000. Normally >75 means sharp)
 ```
 
