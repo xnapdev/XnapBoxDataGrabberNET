@@ -380,7 +380,13 @@ namespace XnapBox
             Color color2 = parseHSVString(objectColor2HSV);
             int blurIndex = safeGetInt(frameHeader, "X-BlurIndex", -1);
 
-            Boolean isFullFrame = false;
+		    int captureTime = safeGetInt(frameHeader, "X-CaptureTime", 0);
+		    String srcID = safeGetString(frameHeader, "X-SourceID", "");
+            int sourceID = -1;
+		    if (srcID != null && !srcID.equals(""))
+			    sourceID = Integer.parseInt(srcID);
+		    int frameNo = safeGetInt(frameHeader, "X-FrameNo", 0);
+
             Boolean isHeartbeat = false;
 
 			// create a simple GDI+ happy Bitmap
@@ -389,11 +395,6 @@ namespace XnapBox
             {
                 isHeartbeat = true;
             }
-            //if (filename.Contains("-TEST-"))
-            //{
-            //    isFullFrame = true;
-            //}
-
 
             if (isHeartbeat)
             {
@@ -401,28 +402,13 @@ namespace XnapBox
                 if (HeartbeatReady != null)
                     HeartbeatReady(this, new HeartbeatEventArgs { timestamp = timestamp });
             }
-            else if (isFullFrame)
-            {
-                Console.WriteLine("ProcessFrame FullFrame");
-                if (FullFrameReady != null)
-                {
-                    try
-                    {
-                        FullFrameReady(this, new FullFrameReadyEventArgs { timestamp = timestamp, time = time, frameID = frameID, filename = filename, FrameBuffer = CurrentFrame, Bitmap = Bitmap });
-                    }
-                    catch (Exception )
-                    {
-                        Console.Error.WriteLine("Unhandled exception on frame ready.");
-                    }
-                }
-            }
             else
             {
                 if (FrameReady != null)
                 {
                     try
                     {
-                        FrameReady(this, new FrameReadyEventArgs { timestamp = timestamp, time = time, frameID = frameID, filename = filename, FrameBuffer = CurrentFrame, Bitmap = Bitmap, centerX = centerX, centerY = centerY, objectHeight = objectHeight, objectWidth = objectWidth, trackerID = trackerID, color1 = color1, color2 = color2, blurIndex = blurIndex });
+                        FrameReady(this, new FrameReadyEventArgs { timestamp = timestamp, time = time, frameID = frameID, filename = filename, FrameBuffer = CurrentFrame, Bitmap = Bitmap, centerX = centerX, centerY = centerY, objectHeight = objectHeight, objectWidth = objectWidth, trackerID = trackerID, color1 = color1, color2 = color2, blurIndex = blurIndex, captureTime = captureTime, sourceID = sourceID, frameNo = frameNo});
                     }
                     catch (Exception )
                     {
@@ -498,6 +484,9 @@ namespace XnapBox
         public Color color1;
         public Color color2;
         public int blurIndex;
+        public int captureTime;
+        public int sourceID;
+        public int frameNo;
 
         public String toString()
         {
@@ -507,6 +496,10 @@ namespace XnapBox
             ret += "TrackerID: " + trackerID + " ";
             ret += "frameID: " + frameID + " ";
             ret += "Color: " + color1 + " " + color2 + " ";
+            ret += "blurIndex: " + blurIndex + " ";
+            ret += "captureTime: " + captureTime + " ";
+            ret += "sourceID: " + sourceID + " ";
+            ret += "frameNo: " + frameNo + " ";
             ret += "FrameBuffer.length: " + FrameBuffer.Length + " ";
 
             return ret;
